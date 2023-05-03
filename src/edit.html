@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" class="font-sans">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../dist/output.css">
+    <!-- font awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Tailwindcss cdn  -->
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <title>To do List</title>
+</head>
+<style>
+    *{
+        font-family: sans-serif;
+    }
+</style>
+<body  class="bg-slate-50">
+     <!-- this is to do list section -->
+     <header>
+        <h1 class="text-center text-4xl text-slate-600 mt-10 font-bold">
+            Edit To Do List
+        </h1>
+     </header>
+    <main class="max-w-7xl mx-auto mt-10 md:mt-16 lg:mt-20">
+        
+        <!-- edit section -->
+        <div class=" rounded-2xl shadow-xl border border-slate-200 mx-5 lg:mx-0">
+            <button onclick="history.back()" class="bg-blue-400 text-white w-8 md:w-10 h-8 md:h-10 flex justify-center items-center rounded-full shadow-xl m-5">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <section class=" md:grid md:grid-cols-3">
+                <!-- image section  -->
+               <article class="hidden md:flex justify-center items-center ps-2 lg:ps-10">
+                <img src="https://i.pinimg.com/564x/fd/cd/d4/fdcdd4eeba23eaaf4cf2d6012102c4b5.jpg" alt="">
+               </article>
+               <!--  -->
+
+               <!-- for edit section  -->
+               <article class="md:col-span-2 ms-5 lg:ms-20 p-6 py-10 md:p-10 lg:p-16 md:ps-0">
+                <form class="mt-0 lg:mt-10" action="">
+                    <div class="">
+                        <label for="category" class="text-slate-600 text-sm">Category</label><br>
+                        <input id="category" type="text" class="px-3 py-1 text-md md:px-5 md:py-2 rounded-xl shadow-md md:text-lg w-full focus:outline-0 focus:ring-1 focus:ring-blue-300" placeholder="Enter Category...">
+                    </div>
+                    <div class="mt-8">
+                        <label for="title" class="text-slate-600 text-sm">Title</label><br>
+                        <input id="title" type="text" class="px-3 py-1 text-md md:px-5 md:py-2 rounded-xl shadow-md md:text-lg w-full focus:outline-0 focus:ring-1 focus:ring-blue-300" placeholder="Enter Title...">
+                    </div>
+                    <div class="mt-8">
+                        <label for="description" class="text-slate-600 text-sm">Description</label><br>
+                        <textarea name="" class="px-3 py-1 text-md md:px-5 md:py-2 rounded-xl shadow-md md:text-lg w-full focus:outline-0 focus:ring-1 focus:ring-blue-300" placeholder="Enter Description..." id="description" cols="30" rows="5"></textarea>
+                    </div>
+                    <div class="flex justify-end mt-10">
+                        <button type="submit" class="bg-blue-500 text-white px-4 text-sm md:text-md py-2 md:px-6 md:py-3 shadow-xl rounded-2xl">
+                            <i class="fas fa-edit"></i>
+                            Edit
+                        </button>
+                    </div>
+                </form>
+               </article>
+               <!--  -->
+            </section>
+        </div>
+        <!--  -->
+    </main>
+    <!--  -->
+
+</body>
+</html>
