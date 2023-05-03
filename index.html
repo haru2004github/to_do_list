@@ -63,9 +63,9 @@
 
                         <!-- edit and delete section  -->
                         <div class="flex gap-x-3 items-center">
-                            <a href="./src/edit.html" class="w-6 h-6 text-sm md:text-md md:w-8 md:h-8 flex justify-center items-center rounded-md bg-slate-500 text-white shadow-md">
+                            <button onclick="showEditModal()" class=" w-6 h-6 text-sm md:text-md md:w-8 md:h-8 flex justify-center items-center rounded-md bg-slate-500 text-white shadow-md">
                                 <i class="fas fa-edit"></i>
-                            </a>
+                            </button>
                             <a href="" class="w-6 h-6 text-sm md:text-md md:w-8 md:h-8 flex justify-center items-center rounded-md bg-red-500 text-white shadow-md">
                                 <i class="fas fa-trash"></i>
                             </a>
@@ -91,9 +91,9 @@
 
                         <!-- edit and delete section  -->
                         <div class="flex gap-x-3 items-center">
-                            <a href="./src/edit.html" class="w-6 h-6 text-sm md:text-md md:w-8 md:h-8 flex justify-center items-center rounded-md bg-slate-500 text-white shadow-md">
+                            <button onclick="showEditModal()" class=" w-6 h-6 text-sm md:text-md md:w-8 md:h-8 flex justify-center items-center rounded-md bg-slate-500 text-white shadow-md">
                                 <i class="fas fa-edit"></i>
-                            </a>
+                            </button>
                             <a href="" class="w-6 h-6 text-sm md:text-md md:w-8 md:h-8 flex justify-center items-center rounded-md bg-red-500 text-white shadow-md">
                                 <i class="fas fa-trash"></i>
                             </a>
@@ -119,9 +119,9 @@
 
                         <!-- edit and delete section  -->
                         <div class="flex gap-x-3 items-center">
-                            <a href="./src/edit.html" class="w-6 h-6 text-sm md:text-md md:w-8 md:h-8 flex justify-center items-center rounded-md bg-slate-500 text-white shadow-md">
+                            <button onclick="showEditModal()" class=" w-6 h-6 text-sm md:text-md md:w-8 md:h-8 flex justify-center items-center rounded-md bg-slate-500 text-white shadow-md">
                                 <i class="fas fa-edit"></i>
-                            </a>
+                            </button>
                             <a href="" class="w-6 h-6 text-sm md:text-md md:w-8 md:h-8 flex justify-center items-center rounded-md bg-red-500 text-white shadow-md">
                                 <i class="fas fa-trash"></i>
                             </a>
@@ -129,6 +129,8 @@
                     </div>
                 </div>
                 <!-- this is list end  -->
+
+                
 
             </article>
             <!--  -->
@@ -137,15 +139,16 @@
     </main>
     <!--  -->
 
-    <!-- this is for modal section  -->
-    <div id="modal" class="opacity-0 pointer-events-none duration-500" >
+    <!-- this is for modal create section  -->
+    <div id="modalCreate" class="opacity-0 pointer-events-none duration-500" >
         <section class="fixed  top-0 w-full h-full  flex justify-center items-center bg-black/20">
-            <article id="modalDisplay" class="rounded-2xl px-8 py-6 md:px-14 md:py-10 lg:px-20 lg:py-16 shadow-2xl bg-slate-50 w-[900px] duration-500 translate-y-[-120%]">
+            <article id="modalCreateDisplay" class="rounded-2xl px-8 py-6 md:px-14 md:py-10 lg:px-20 lg:py-16 shadow-2xl bg-slate-50 w-[900px] duration-500 translate-y-[-120%]">
                 <div class="flex justify-end">
-                    <button id="closeBtn" class="w-8 md:w-10 h-8 md:h-10 flex justify-center items-center shadow-xl text-white bg-red-500 rounded-full">
+                    <button  class="closeCreateModalBtn w-8 md:w-10 h-8 md:h-10 flex justify-center items-center shadow-xl text-white bg-red-500 rounded-full">
                         <i class="fas fa-xmark"></i>
                     </button>
                 </div>
+                <h1 class="text-3xl text-center text-slate-600">Create New Lists</h1>
                 <form class="mt-10" action="">
                     <div class="">
                         <label for="category" class="text-slate-600 text-sm">Category</label><br>
@@ -163,6 +166,46 @@
                         <button type="submit" class="bg-blue-500 text-white px-4 text-sm md:text-md py-2 md:px-6 md:py-3 shadow-xl rounded-2xl">
                             <i class="fas fa-plus"></i>
                             Add
+                        </button>
+                    </div>
+                </form>
+            </article>
+        </section>
+        <!--  -->
+    </div>
+    <!--  -->
+
+    <!-- this is for modal edit section  -->
+    <div id="modalEdit" class="opacity-0 pointer-events-none duration-500" >
+        <section class="fixed  top-0 w-full h-full  flex justify-center items-center bg-black/20">
+            <article id="modalEditDisplay" class="rounded-2xl px-8 py-6 md:px-14 md:py-10 lg:px-20 lg:py-16 shadow-2xl bg-slate-50 w-[900px] duration-500 translate-y-[-120%]">
+                <div class="flex justify-end">
+                    <button  class="closeEditModalBtn w-8 md:w-10 h-8 md:h-10 flex justify-center items-center shadow-xl text-white bg-red-500 rounded-full">
+                        <i class="fas fa-xmark"></i>
+                    </button>
+                </div>
+                <h1 class="text-3xl text-center text-slate-600">Edit Lists</h1>
+                <form class="mt-10" action="">
+                    <div class="">
+                        <label for="category" class="text-slate-600 text-sm">Category</label><br>
+                        <select class="px-3 py-1 text-md text-slate-600 md:px-5 md:py-2 rounded-xl shadow-md md:text-lg w-full focus:outline-0 focus:ring-1 focus:ring-blue-300" name="" id="">
+                            <option value="">One</option>
+                            <option value="">Two</option>
+                            <option value="">Three</option>
+                        </select>
+                    </div>
+                    <div class="mt-8">
+                        <label for="title" class="text-slate-600 text-sm">Title</label><br>
+                        <input id="title" type="text" class="px-3 py-1 text-slate-600 text-md md:px-5 md:py-2 rounded-xl shadow-md md:text-lg w-full focus:outline-0 focus:ring-1 focus:ring-blue-300" placeholder="Enter Title...">
+                    </div>
+                    <div class="mt-8">
+                        <label for="description" class="text-slate-600 text-sm">Description</label><br>
+                        <textarea name="" class="px-3 py-1 text-slate-600 text-md md:px-5 md:py-2 rounded-xl shadow-md md:text-lg w-full focus:outline-0 focus:ring-1 focus:ring-blue-300" placeholder="Enter Description..." id="description" cols="30" rows="5"></textarea>
+                    </div>
+                    <div class="flex justify-end mt-10">
+                        <button type="submit" class="bg-blue-500 text-white px-4 text-sm md:text-md py-2 md:px-6 md:py-3 shadow-xl rounded-2xl">
+                            <i class="fas fa-plus"></i>
+                            Update
                         </button>
                     </div>
                 </form>
@@ -229,29 +272,53 @@
 </body>
 <script>
 
+    // btn decelaration 
     let addBtn = document.getElementById('addBtn')
-    let modal = document.getElementById('modal')
-    let modalDisplay = document.getElementById('modalDisplay')
-    let closeBtn = document.getElementById('closeBtn')   
+    let showEditModalBtn = document.querySelector('.showEditModalBtn')
+
+    let modalCreate = document.getElementById('modalCreate')
+    let modalEdit = document.getElementById('modalEdit')
+    
+    let modalCreateDisplay = document.getElementById('modalCreateDisplay')
+    let modalEditDisplay = document.getElementById('modalEditDisplay')
+
+    let closeCreateModalBtn = document.querySelector('.closeCreateModalBtn')   
+    let closeEditModalBtn = document.querySelector('.closeEditModalBtn')   
+
     let closeSuccessAlert = document.querySelector('.closeSuccessAlert') 
     let closeEditAlert = document.querySelector('.closeEditAlert') 
     let closeDeleteAlert = document.querySelector('.closeDeleteAlert') 
+
     let alertSuccessDisplay = document.querySelector('.alertSuccessDisplay') 
     let alertEditDisplay = document.querySelector('.alertEditDisplay') 
     let alertDeleteDisplay = document.querySelector('.alertDeleteDisplay') 
 
-    //click addBtn to show modal section
+    //click addBtn to show modalCreate section
     addBtn.addEventListener('click' ,()=>{
-        modalDisplay.style.transform ="translateY(0)"
-        modal.style.opacity ='1'
-        modal.style.pointerEvents ="auto"
+        modalCreateDisplay.style.transform ="translateY(0)"
+        modalCreate.style.opacity ='1'
+        modalCreate.style.pointerEvents ="auto"
     })
 
-    //click close btn to close modal section
-    closeBtn.addEventListener('click' ,()=>{
-        modalDisplay.style.transform ="translateY(-120%)"
-        modal.style.opacity ='0'
-        modal.style.pointerEvents ="none"
+    //show edit modal function
+    function showEditModal(){
+        modalEditDisplay.style.transform ="translateY(0)"
+        modalEdit.style.opacity ='1'
+        modalEdit.style.pointerEvents ="auto"
+    }
+
+    //click close btn to close create modal section
+    closeCreateModalBtn.addEventListener('click' ,()=>{
+        modalCreateDisplay.style.transform ="translateY(-120%)"
+        modalCreate.style.opacity ='0'
+        modalCreate.style.pointerEvents ="none"
+    })
+
+     //click close btn to close edit modal section
+     closeEditModalBtn.addEventListener('click' ,()=>{
+        modalEditDisplay.style.transform ="translateY(-120%)"
+        modalEdit.style.opacity ='0'
+        modalEdit.style.pointerEvents ="none"
     })
 
     //click closeAlert btn to close SuccessAlertDisplay 
